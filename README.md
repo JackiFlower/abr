@@ -7,8 +7,7 @@
 ## Bootstrap
 
 ```
-git clone git@github.com:JackiFlower/abr.git && cd abbr-dev-test  
-git checkout master  
+git clone https://github.com/JackiFlower/abr.git && cd abr
 npm install  
 ```
 
