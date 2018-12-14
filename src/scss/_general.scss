@@ -1,0 +1,125 @@
+body {
+    &:not(.os-android) .os-android,
+    &:not(.os-osx) .os-osx,
+    &:not(.os-windows) .os-windows,
+    &:not(.os-ios) .os-ios,
+    &:not(.os-linux) .os-linux,
+    &:not(.device-phone) .device-phone,
+    &:not(.device-tablet) .device-tablet,
+    &:not(.device-desktop) .device-desktop,
+    &:not(.browser-chrome) .browser-chrome,
+    &:not(.browser-edge) .browser-edge,
+    &:not(.browser-opera) .browser-opera,
+    &:not(.browser-ie) .browser-ie,
+    &:not(.browser-firefox) .browser-firefox,
+    &:not(.browser-safari) .browser-safari,
+    &:not(.browser-samsung) .browser-samsung {
+        display: none;
+    }
+}
+
+// bugfix on android
+body .device-desktop{
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+}
+
+$map-sides: (
+        t: top,
+        r: right,
+        b: bottom,
+        l: left,
+        x: left-right,
+        y: top-bottom
+);
+
+@each $prop, $prop-abbrev in (margin: m, padding: p) {
+    @each $side-abbrev, $side in $map-sides {
+        @for $i from 0 through 20 {
+            .#{$prop-abbrev}#{$side-abbrev}_#{$i*5} {
+                @if $side-abbrev == x {
+                    #{$prop}-left: #{$i*5}px !important;
+                    #{$prop}-right: #{$i*5}px !important;
+                } @else if $side-abbrev == y {
+                    #{$prop}-top: #{$i*5}px !important;
+                    #{$prop}-bottom: #{$i*5}px !important;
+                } @else {
+                    #{$prop}-#{$side}: #{$i*5}px !important;
+                }
+            }
+        }
+    }
+}
+
+.p_0 {
+    padding: 0 !important;
+}
+
+
+.horisontal-align_center {
+    left: 50%; 
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.text-align {
+    &_left {
+        text-align: left !important; 
+    }
+    
+    &_center {
+        text-align: center !important;
+    }
+    
+    &_right {
+        text-align: right !important;
+    }
+    
+    &_justify-center {
+        text-align: justify !important;
+        text-align-last: center !important;
+    }
+
+    &_justify {
+        text-align: justify !important;
+    }
+}
+
+.column_3 {
+    column-count: 3;
+    column-gap: 30px;
+    text-align: justify;
+
+    @include media-breakpoint-down(xl) {
+        column-count: auto;
+    }
+
+    h1, h2, h3 {
+        text-align: left;
+    }
+
+    &.headline-block__text {
+        text-align: justify;
+    }
+}
+
+.hide {
+    &_desktop {
+        @include media-breakpoint-only(xl) {
+            display: none !important;
+        }
+    }
+
+    &_tablet {
+        @include media-breakpoint-between(md,xl) {
+            display: none !important;
+        }
+    }
+
+    &_mobile {
+        @include media-breakpoint-down(sm) {
+            display: none !important;
+        }
+    }
+}

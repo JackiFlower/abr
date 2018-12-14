@@ -1,0 +1,28 @@
+// Mixin for generating buttons styles
+
+@mixin btn-styles($color, $color-hover) {
+    background-color: $color;
+    color: $color-white;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $color-hover;
+        box-shadow: none;
+    }
+
+    &:hover{
+        box-shadow:  0 3px 8px 0 rgba(0,0,0, 0.17);
+    }
+
+    &.disabled,
+    &:disabled,
+    &[disabled] {
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $color;
+            border-color: $color;
+        }
+    }
+}

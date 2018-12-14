@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>tsabra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <div class="app-name">Find user on GitHub</div>
+  </header>
+
+  <main>
+
+    <section class="row request">
+      <div class="row__container">
+        <div class="search col_12">
+          <input type="text" value="googleapis" name="user" placeholder="User name">
+          <input type="submit" value="search" class="btn btn-red">
+        </div>
+      </div>
+    </section>
+
+    <section class="row response">
+      <div class="overlay">
+        <i class="fas fa-spinner fa-spin"></i>
+      </div>
+      <div class="row__container">
+      </div>
+    </section>
+
+  </main>
+  <footer>
+    <div class="app-description">Based on GitHub API</div>
+    <a href="https://developer.github.com/v3/" class="api-link btn btn-red" target="_blank">More info</a>
+  </footer>
+
+  <script src="./main.js"></script>
+</body>
+</html>

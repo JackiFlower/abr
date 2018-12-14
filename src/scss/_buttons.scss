@@ -1,0 +1,39 @@
+$button-colors: (
+  red:          #c30c15,
+  red-light:    #af0a12,
+  blue:         #408fc8,
+  blue-light:   #3582b9,
+  grey:         #646464,
+  grey-light:   #919191,
+) !default
+
+.btn {
+  display: inline-block;
+  width: max-content;
+  align-self: center;
+  padding: 10px 20px;
+  font-size: .875rem;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.2;
+  transition: cubic-bezier(.64, .09, .08, 1) .4s;
+  transition-property: background-color, box-shadow;
+  border-radius: 30px;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+}
+
+@each $button-color in (red, blue, grey) {
+  $btn-color:       map-get($button-colors, $button-color);
+  $btn-color-hover: map-get($button-colors, #{$button-color}-light);
+
+  .btn-#{$button-color} {
+     @include btn-styles($btn-color, $btn-color-hover)
+   }
+}

@@ -1,0 +1,11 @@
+header {
+
+  .app-name {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: $color-blue;
+    font-size: 1.2rem;
+    color: $color-white;
+  }
+}

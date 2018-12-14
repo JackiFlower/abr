@@ -1,0 +1,49 @@
+.row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  &__container {
+    display: flex;
+    flex: 0 1 auto;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .row_100 & {
+      max-width: 100%;
+    }
+    .row_center &{
+      justify-content: center;
+    }
+    .row_left & {
+      justify-content: flex-start;
+    }
+    .row_left & {
+      justify-content: flex-end;
+    }
+    .row_around &{
+      justify-content: space-around;
+    }
+    .row_between & {
+      justify-content: space-between;
+    }
+  }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $size: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    @for $col from 1 through 12 {
+      $width: 100% / 12 * $col;
+
+      .col#{$size}_#{$col} {
+        flex: 0 0 $width;
+        max-width: $width;
+        padding: 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+$color-text:              #2c2c2c !default;
+
+$color-black:             #000    !default;
+$color-white:             #fff    !default;
+$color-white-hover:       #f6f6f6 !default;
+$color-red:               #c30c15 !default;
+$color-red-light:         #af0a12 !default;
+$color-blue:              #408fc8 !default;
+$color-blue-light:        #3582b9 !default;
+$color-grey:              #646464 !default;
+$color-grey-light:        #919191 !default;
+
+$state-colors: (
+  error:             #FF3636,
+  warning:           #FFB236,
+  success:           #18ce0f
+) !default;

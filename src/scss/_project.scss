@@ -1,0 +1,114 @@
+.response {
+  position: relative;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #fff;
+
+  i {
+    font-size: 48px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.show {
+    display: block;
+    @include opacity(1);
+  }
+}
+
+.user-icon {
+
+  img {
+    border-radius: 5px;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.3);
+    padding: 10px;
+  }
+}
+
+.user-information {
+  display: flex;
+  align-items: center;
+
+  &__name {
+    font-size: 1.8em;
+  }
+
+  &__link {
+    margin-left: 10px;
+  }
+}
+
+.repo-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    padding: 10px;
+
+    &:hover {
+      box-shadow: inset 1px 0 0 #dadce0,
+      inset -1px 0 0 #dadce0,
+      0 1px 2px 0 rgba(60,64,67,.3),
+      0 1px 3px 1px rgba(60,64,67,.15);
+    }
+
+    &-top,
+    &-bottom {
+      display: flex;
+      justify-content:space-between;
+      padding: 10px 5px;
+      align-items: center;
+      font-size: .875rem;
+    }
+
+    &-top {
+      .repo-list__item-name {
+        font-size: 1.1rem;
+        font-weight: 900;
+      }
+    }
+  }
+}
+
+
+
+
+@each $state in (error, warning, success) {
+  $color: map-get($state-colors, $state);
+
+  .#{$state} {
+    color: $color ;
+  }
+  input[type=text].#{$state} {
+    border-color: $color;
+    color: $color;
+  }
+}
+
+#delFilter {
+  font-size: .75rem;
+  line-height: 20px;
+  color: $color-red;
+  margin-left: 20px;
+  padding: 5px;
+  display: none;
+
+  &:hover {
+    cursor: pointer;
+    border-bottom: 1px dotted $color-red;
+  }
+
+  i {
+    margin-right: 5px;
+  }
+
+}

@@ -1,0 +1,19 @@
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  background-color: $color-blue-light;
+  font-size: 1rem;
+  color: $color-white;
+
+  @include media-breakpoint-down(xs) {
+    flex-direction: column;
+  }
+
+  .app-description {
+    @include media-breakpoint-down(xs) {
+      margin-bottom: 20px;
+    }
+  }
+}

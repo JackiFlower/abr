@@ -1,0 +1,37 @@
+.search {
+  display: flex;
+
+  [type="text"] {
+    flex-grow: 1;
+  }
+
+  [type="submit"] {
+    margin-left: 15px;
+  }
+
+  [type="text"] {
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid $color-grey-light;
+    border-radius: 30px;
+    color: $color-text;
+    line-height: normal;
+    font-size: .85rem;
+    transition: color .3s ease-in-out,border-color .3s ease-in-out,background-color .3s ease-in-out;
+    box-shadow: none;
+
+    &:focus,
+    &:hover {
+      border-color: $color-black;
+      color: $color-black;
+    }
+
+  }
+}
+
+select {
+  padding: 5px 20px 5px 10px;
+  border-radius: 30px;
+  margin-left: 10px;
+  appearance: none;
+}
